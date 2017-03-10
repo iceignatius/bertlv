@@ -155,6 +155,8 @@ void test_tlv_group(void)
         tlv = bertlv_grp_find(group, sizeof(group), 0xC7);
         assert( !tlv );
     }
+
+    assert( 20 == bertlv_grp_calc_total_size(group, sizeof(group)) );
 }
 //------------------------------------------------------------------------------
 int main(void)

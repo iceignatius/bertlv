@@ -462,3 +462,22 @@ const void* bertlv_grp_find(const void *group, size_t size, bertlv_tag_t tag)
     return NULL;
 }
 //------------------------------------------------------------------------------
+size_t bertlv_grp_calc_total_size(const void *group, size_t size)
+{
+    /**
+     * Calculate total size of available TLVs in group.
+     *
+     * @param group The set of raw data of TLV elements.
+     * @param size  Size of the input data.
+     * @return The total size of available TLVs.
+     */
+    size_t total_size = 0;
+
+    bertlv_iter_t iter;
+    bertlv_iter_init(&iter, group, size);
+    for(const void *tlv; ( tlv = bertlv_iter_get_next(&iter) ); )
+        total_size += bertlv_get_total_size(tlv);
+
+    return total_size;
+}
+//------------------------------------------------------------------------------
