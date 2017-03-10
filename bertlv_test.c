@@ -144,15 +144,15 @@ void test_tlv_group(void)
     }
 
     {
-        assert( 5 == bertlv_grp_count_tlvs(group, sizeof(group)) );
+        assert( 5 == bertlv_grp_count(group, sizeof(group)) );
 
         const uint8_t *tlv;
 
-        tlv = bertlv_grp_find_tlv(group, sizeof(group), 0xC3);
+        tlv = bertlv_grp_find(group, sizeof(group), 0xC3);
         assert( tlv );
         assert( 0 == memcmp(tlv, tlv3, sizeof(tlv3)) );
 
-        tlv = bertlv_grp_find_tlv(group, sizeof(group), 0xC7);
+        tlv = bertlv_grp_find(group, sizeof(group), 0xC7);
         assert( !tlv );
     }
 }

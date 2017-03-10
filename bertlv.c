@@ -421,7 +421,7 @@ const void* bertlv_iter_get_next(bertlv_iter_t *iter)
     return tlv;
 }
 //------------------------------------------------------------------------------
-unsigned bertlv_grp_count_tlvs(const void *group, size_t size)
+unsigned bertlv_grp_count(const void *group, size_t size)
 {
     /**
      * Count the number of TLV elements in a group of TLV data.
@@ -440,7 +440,7 @@ unsigned bertlv_grp_count_tlvs(const void *group, size_t size)
     return count;
 }
 //------------------------------------------------------------------------------
-const void* bertlv_grp_find_tlv(const void *group, size_t size, bertlv_tag_t tag)
+const void* bertlv_grp_find(const void *group, size_t size, bertlv_tag_t tag)
 {
     /**
      * Find the specific TLV element in a group of TLV data by tag.

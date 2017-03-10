@@ -116,8 +116,8 @@ const void* bertlv_iter_get_next(bertlv_iter_t *iter);
  * @{
  */
 
-unsigned    bertlv_grp_count_tlvs(const void *group, size_t size);
-const void* bertlv_grp_find_tlv  (const void *group, size_t size, bertlv_tag_t tag);
+unsigned    bertlv_grp_count(const void *group, size_t size);
+const void* bertlv_grp_find (const void *group, size_t size, bertlv_tag_t tag);
 
 /**
  * @}
