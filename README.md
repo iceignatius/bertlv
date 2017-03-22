@@ -8,7 +8,7 @@ This is a data processor of Basic Encoding Rules (BER) format of TLV data.
 ## Build
 
 This library currently have no makefile, library, or something like that.
-What a user need to do is just add the following file to your project and compile them:
+What a user need to do is just add the following files to your project and compile them:
 
 * bertlv.h
 * bertlv.c
@@ -62,5 +62,7 @@ and please refer to them to use library in details.
     bertlv_iter_init(&iter, group, sizeof(group));
     while(( tlv = bertlv_iter_get_next(&iter) ))
     {
-        print_tlv_information(tlv);
+        print("Get element: tag=%lu, length=%zu\n",
+              bertlv_get_tag(tlv),
+              bertlv_get_length(tlv));
     }
