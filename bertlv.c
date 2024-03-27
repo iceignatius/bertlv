@@ -185,7 +185,7 @@ size_t bertlv_len_calc_encode_size(size_t length)
     if( length <= 0x7F ) return 1;
 
     size_t count;
-    for(count = 0; length & 0xFF; ++count, length >>= 8)
+    for(count = 0; length; ++count, length >>= 8)
     {}
 
     return count + 1;
