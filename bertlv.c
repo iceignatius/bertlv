@@ -12,7 +12,7 @@ static
 size_t bertlv_tag_calc_encode_size(bertlv_tag_t tag)
 {
     size_t count;
-    for(count = 0; tag & 0xFF; ++count, tag >>= 8)
+    for(count = 0; tag; ++count, tag >>= 8)
     {}
 
     return count;
@@ -93,7 +93,7 @@ bertlv_tag_t bertlv_tag_make(int cla, int type, long num)
      *          and the caller should be responsible for that.
      *          And the input properties may be truncated if they are out of range.
      */
-    if( num < 0x7F )
+    if( num < 0x1F )
         return ( ( cla & 0x03 ) << 6 ) | ( ( type & 0x01 ) << 5 ) | ( num & tag_mask_first );
 
     size_t size = bertlv_tag_calc_num_encode_size(num);
@@ -102,7 +102,7 @@ bertlv_tag_t bertlv_tag_make(int cla, int type, long num)
     raw[0] = ( ( cla & 0x03 ) << 6 ) | ( ( type & 0x01 ) << 5 ) | tag_mask_first;
     for(size_t i=1; i<size; ++i)
     {
-        raw[i] = ( num >> 7*( size - i - 1 ) );
+        raw[i] = ( num >> 7*( size - i - 1 ) ) & 0x7F;
         if( i + 1 != size )
             raw[i] |= tag_mask_more;
     }

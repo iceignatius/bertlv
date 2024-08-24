@@ -32,6 +32,132 @@ void test_tags(void)
         assert( type == bertlv_tag_get_type  (tag) );
         assert( num  == bertlv_tag_get_number(tag) );
     }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 30;
+        static const bertlv_tag_t tag = 0x5E;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 31;
+        static const bertlv_tag_t tag = 0x5F1F;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 32;
+        static const bertlv_tag_t tag = 0x5F20;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 255;
+        static const bertlv_tag_t tag = 0x5F817F;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 256;
+        static const bertlv_tag_t tag = 0x5F8200;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 257;
+        static const bertlv_tag_t tag = 0x5F8201;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 511;
+        static const bertlv_tag_t tag = 0x5F837F;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 512;
+        static const bertlv_tag_t tag = 0x5F8400;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
+
+    {
+        static const int  cla  = BERTLV_CLASS_APPLICATION;
+        static const int  type = BERTLV_TYPE_PRIMITIVE;
+        static const long num  = 513;
+        static const bertlv_tag_t tag = 0x5F8401;
+
+        assert( tag == bertlv_tag_make(cla, type, num) );
+        assert( bertlv_tag_is_valid(tag) );
+
+        assert( cla  == bertlv_tag_get_class (tag) );
+        assert( type == bertlv_tag_get_type  (tag) );
+        assert( num  == bertlv_tag_get_number(tag) );
+    }
 }
 //------------------------------------------------------------------------------
 void test_tlv_elements(void)
